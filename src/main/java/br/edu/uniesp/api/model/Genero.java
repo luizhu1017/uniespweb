@@ -1,16 +1,20 @@
 package br.edu.uniesp.api.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Genero {
+
     @Id
     @GeneratedValue
+    @Column(name = "genero_id")
     private Integer id;
     private String nome;
     private String descricao;
+
+    @OneToMany(mappedBy = "genero")
+    private Set<Filme> listaFilmes;
 
     public Integer getId() {
         return id;
