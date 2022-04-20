@@ -32,4 +32,8 @@ public class FilmeService {
          return repository.findAll();
      }
 
+     public List<Filme> listaFilmePorTitulo(String titulo){
+         return repository.findByTitulo(titulo);
+     }
+
 }

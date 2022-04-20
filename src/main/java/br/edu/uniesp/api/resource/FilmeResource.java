@@ -51,4 +51,10 @@ public class FilmeResource {
         service.deletar(id);
     }
 
+   //localhost:8080/filme/titulo/transformers
+    @GetMapping("/titulo/{titulo}")
+    public List<Filme> listaFilmePorTitulo(@PathVariable String titulo){
+        return service.listaFilmePorTitulo(titulo);
+    }
+
 }
