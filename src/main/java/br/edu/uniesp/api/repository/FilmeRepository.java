@@ -13,5 +13,5 @@ public interface FilmeRepository extends JpaRepository<Filme,Integer> {
     List<Filme> findByTitulo(String titulo);
     @Query("select f.genero from Filme f where " +
             "f.genero.nome =:genero")
-    List<Filme> buscaPorGenero(@Param("genero") String genero)
+    List<Filme> buscaPorGenero(@Param("genero") String genero);
 }
