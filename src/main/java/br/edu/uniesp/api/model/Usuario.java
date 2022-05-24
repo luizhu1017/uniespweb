@@ -2,6 +2,8 @@ package br.edu.uniesp.api.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.br.CPF;
+import org.hibernate.validator.constraints.br.TituloEleitoral;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,5 +22,7 @@ public class Usuario {
     private String nome;
 
     @Email
+    @TituloEleitoral
+    @CPF
     private String email;
 }
