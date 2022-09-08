@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(maxAge = 1300)
 @RestController
 @RequestMapping("/api/contato")
 public class ContatoResource {
@@ -15,25 +16,13 @@ public class ContatoResource {
     private ContatoService service;
 
 
-    //POST localhost:8080/contato
-        /*
-      {
-        "titulo": "Harry Fujioka"
-      }
-     */
     @PostMapping
     public Contato salvar(@RequestBody Contato contato){
         contato = service.salvar(contato);
         return contato;
     }
 
-    //PUT localhost:8080/contato
-    /*
-      {
-        "id": 3,
-        "titulo": "AlterandoContato"
-      }
-     */
+
     @PutMapping
     public Contato atualizar(@RequestBody Contato contato) throws Exception {
         return service.atualizar(contato);
